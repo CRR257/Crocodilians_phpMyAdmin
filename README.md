@@ -1,4 +1,4 @@
-# Crocodilians_mySql
+# Crocodilians_phpMyAdmin
 
 Backend to manange crodilians in a reserve.</br>
 User can create, update, delete and search by id a crocodilian in database.</br>
