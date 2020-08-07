@@ -6,24 +6,28 @@ import { CrocodilianController } from './crocodilians/controller/crocodilians.co
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Crocodilian } from './crocodilians/entities/crocodilian.entity';
 import { CrocodilianService } from './crocodilians/service/crocodilians.service';
-
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'nest',
-      password: 'password',
+      host: 'mysql://bf9d367b8af22c:46cf40bf@us-cdbr-east-02.cleardb.com/heroku_c5bd09927bb8fac?reconnect=true',
+      //port: 3306,
+      //username: 'nest',
+      //password: 'password',
       database: 'crocodilians_db',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Crocodilian]),
-    MulterModule.register({
-      dest: './files',
-    })
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'front/dist/crocodiliansProject'),
+    }),
+     TypeOrmModule.forFeature([Crocodilian]),
+    // MulterModule.register({
+    //   dest: './files',
+    // })
   ],
   controllers: [AppController, CrocodilianController],
   providers: [AppService, CrocodilianService],

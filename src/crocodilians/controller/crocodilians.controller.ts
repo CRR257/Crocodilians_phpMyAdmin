@@ -2,7 +2,7 @@ import { Controller, Post, Body, Get, Put, Delete, Res, HttpStatus, Param } from
 import { CreateCrocodilianDTO } from '../dto/create-crocodilian-dto';
 import { CrocodilianService } from '../service/crocodilians.service';
 
-@Controller('crocodilians')
+@Controller('api/crocodilians')
 export class CrocodilianController {
 
     constructor(private crocodilianService: CrocodilianService) {}
