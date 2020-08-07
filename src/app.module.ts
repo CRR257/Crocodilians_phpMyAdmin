@@ -13,18 +13,18 @@ import { join } from 'path';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'mysql://bf9d367b8af22c:46cf40bf@us-cdbr-east-02.cleardb.com/heroku_c5bd09927bb8fac?reconnect=true',
-      //port: 3306,
-      //username: 'nest',
-      //password: 'password',
-      database: 'crocodilians_db',
+      host: 'us-cdbr-east-02.cleardb.com',
+      port: 3306,
+      username: 'bf9d367b8af22c',
+      password: '46cf40bf',
+      database: 'heroku_c5bd09927bb8fac',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'front/dist/crocodiliansProject'),
     }),
-     TypeOrmModule.forFeature([Crocodilian]),
+    TypeOrmModule.forFeature([Crocodilian]),
     // MulterModule.register({
     //   dest: './files',
     // })

@@ -3,14 +3,14 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 @Entity()
 export class Crocodilian {
     @PrimaryGeneratedColumn()
-    id: number
+    public id: number
 
     @Column()
-    name: string;
+    public name: string;
 
     @Column()
-    breed: string;
+    public breed: string;
 
     @Column()
-    age: number;
+    public age: number;
 }
