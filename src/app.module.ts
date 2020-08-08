@@ -1,13 +1,15 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MulterModule } from '@nestjs/platform-express';
 import { CrocodilianController } from './crocodilians/controller/crocodilians.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Crocodilian } from './crocodilians/entities/crocodilian.entity';
 import { CrocodilianService } from './crocodilians/service/crocodilians.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { ImageController } from './images/controller/images.controller';
+import { ImageService } from './images/service/image.service';
+import { Image } from './images/entities/image.entity';
 
 @Module({
   imports: [
@@ -24,12 +26,12 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'front/dist/crocodiliansProject'),
     }),
-    TypeOrmModule.forFeature([Crocodilian]),
+    TypeOrmModule.forFeature([Crocodilian, Image]),
     // MulterModule.register({
     //   dest: './files',
     // })
   ],
-  controllers: [AppController, CrocodilianController],
-  providers: [AppService, CrocodilianService],
+  controllers: [AppController, CrocodilianController, ImageController],
+  providers: [AppService, CrocodilianService, ImageService],
 })
 export class AppModule {}

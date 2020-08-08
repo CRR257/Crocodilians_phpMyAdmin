@@ -17,4 +17,4 @@ https://nestjs.com/
 
 ## Technologies
 
-NestJs && Typescript && phpMyAdmin
+NestJs && Typescript && mySql

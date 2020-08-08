@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Crocodilian } from '../entities/crocodilian.entity';
-import { CreateCrocodilianDTO } from '../dto/create-crocodilian-dto';
+import { CrocodilianDTO } from '../dto/crocodilian-dto';
 
 @Injectable()
 export class CrocodilianService {
   constructor(
     @InjectRepository(Crocodilian)
-    private readonly crocodilianRepository: Repository<Crocodilian>,
+    private readonly crocodilianRepository: Repository<Crocodilian>
   ) {}
 
   public async getAll(): Promise<Crocodilian[]> {
@@ -19,7 +19,7 @@ export class CrocodilianService {
     return await this.crocodilianRepository.findOne(idCrocodilian);
   }
 
-  public async createCrocodilian(crocodilianNew: CreateCrocodilianDTO): Promise<Crocodilian> {
+  public async createCrocodilian(crocodilianNew: CrocodilianDTO): Promise<Crocodilian> {
     const newCrocodilian = new Crocodilian();
     newCrocodilian.name = crocodilianNew.name;
     newCrocodilian.breed = crocodilianNew.breed;
@@ -28,7 +28,7 @@ export class CrocodilianService {
     return this.crocodilianRepository.save(newCrocodilian);
   }
 
-  public async updateCrocodilian(idCrocodilian: number, crocodilianUpdate: CreateCrocodilianDTO): Promise<Crocodilian> {
+  public async updateCrocodilian(idCrocodilian: number, crocodilianUpdate: CrocodilianDTO): Promise<Crocodilian> {
     const crocodilianToUpdate = await this.crocodilianRepository.findOne(idCrocodilian);
     crocodilianToUpdate.name = crocodilianUpdate.name;
     crocodilianToUpdate.breed = crocodilianUpdate.breed;

@@ -1,5 +1,5 @@
 import { Controller, Post, Body, Get, Put, Delete, Res, HttpStatus, Param } from '@nestjs/common';
-import { CreateCrocodilianDTO } from '../dto/create-crocodilian-dto';
+import { CrocodilianDTO } from '../dto/crocodilian-dto';
 import { CrocodilianService } from '../service/crocodilians.service';
 
 @Controller('api/crocodilians')
@@ -8,8 +8,8 @@ export class CrocodilianController {
     constructor(private crocodilianService: CrocodilianService) {}
 
     @Post()
-    create(@Body() createCrocodilianDto: CreateCrocodilianDTO, @Res() response) {
-        this.crocodilianService.createCrocodilian(createCrocodilianDto).then( crocodilian => {
+    create(@Body() crocodilianDto: CrocodilianDTO, @Res() response) {
+        this.crocodilianService.createCrocodilian(crocodilianDto).then( crocodilian => {
             response.status(HttpStatus.CREATED).json(crocodilian);
         }).catch( () => {
             response.status(HttpStatus.FORBIDDEN).json({message:'error in crocodilians creation'});
@@ -36,7 +36,7 @@ export class CrocodilianController {
 
 
     @Put(':id')
-    update(@Body() updateCrocodilianDto: CreateCrocodilianDTO, @Res() response, @Param('id') idCrocodilian) {
+    update(@Body() updateCrocodilianDto: CrocodilianDTO, @Res() response, @Param('id') idCrocodilian) {
         this.crocodilianService.updateCrocodilian(idCrocodilian, updateCrocodilianDto).then(CrocodilianUpdated => {
             response.status(HttpStatus.OK).json(CrocodilianUpdated);
         }).catch( () => {
