@@ -13,4 +13,7 @@ export class Crocodilian {
 
     @Column()
     public age: number;
+
+    @Column()
+    public image: string;
 }

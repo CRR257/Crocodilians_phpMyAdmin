@@ -24,6 +24,7 @@ export class CrocodilianService {
     newCrocodilian.name = crocodilianNew.name;
     newCrocodilian.breed = crocodilianNew.breed;
     newCrocodilian.age = crocodilianNew.age;
+    newCrocodilian.image = crocodilianNew.image;
 
     return this.crocodilianRepository.save(newCrocodilian);
   }
@@ -32,6 +33,8 @@ export class CrocodilianService {
     const crocodilianToUpdate = await this.crocodilianRepository.findOne(idCrocodilian);
     crocodilianToUpdate.name = crocodilianUpdate.name;
     crocodilianToUpdate.breed = crocodilianUpdate.breed;
+    crocodilianToUpdate.age = crocodilianUpdate.age;
+    crocodilianToUpdate.image = crocodilianUpdate.image;
 
     return await this.crocodilianRepository.save(crocodilianToUpdate);
   }
