@@ -10,6 +10,9 @@ import { join } from 'path';
 import { ImageController } from './images/controller/images.controller';
 import { ImageService } from './images/service/image.service';
 import { Image } from './images/entities/image.entity';
+import { Quiz } from './quiz/entities/quiz.entity';
+import { QuizController } from './quiz/controller/quiz.controller';
+import { QuizService } from './quiz/service/quiz.service';
 
 @Module({
   imports: [
@@ -26,9 +29,9 @@ import { Image } from './images/entities/image.entity';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'front/dist/crocodiliansApp'),
     }),
-    TypeOrmModule.forFeature([Crocodilian, Image])
+    TypeOrmModule.forFeature([Crocodilian, Image, Quiz])
   ],
-  controllers: [AppController, CrocodilianController, ImageController],
-  providers: [AppService, CrocodilianService, ImageService],
+  controllers: [AppController, CrocodilianController, ImageController, QuizController],
+  providers: [AppService, CrocodilianService, ImageService, QuizService],
 })
 export class AppModule {}
