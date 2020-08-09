@@ -24,7 +24,7 @@ import { Image } from './images/entities/image.entity';
       synchronize: true,
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'front/dist/crocodiliansProject'),
+      rootPath: join(__dirname, '..', 'front/dist/crocodiliansApp'),
     }),
     TypeOrmModule.forFeature([Crocodilian, Image]),
     // MulterModule.register({
