@@ -1,7 +1,8 @@
-# Crocodilians_phpMyAdmin
+# Crocodilians
 
 Backend to manange crodilians in a reserve.</br>
-User can create, update, delete and search by id a crocodilian in database.</br>
+Endpoints created to create, update, delete and search by id a crocodilian in database.</br>
+Endpoints created to create and get crocodilian's images in database.</br>
 
 ## Instrucions to run the project
 
@@ -9,8 +10,6 @@ User can create, update, delete and search by id a crocodilian in database.</br>
 ```
 npm start
 ```
-
-Make sure you have started phpMyAdmin application (in my case, I'm using Xampp to connect my app to phpMyAdmin)
 
 ### NestJs
 https://nestjs.com/
