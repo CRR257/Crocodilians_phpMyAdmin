@@ -1,0 +1,17 @@
+{
+  "header": {
+    "title": "Reserva de Cocodrils",
+    "language": "Language",
+    "home": "Portada",
+    "cocodrilians": "Cocodrils"
+  },
+  "footer": {
+    "title": "per Crr257"
+  },
+  "crocodilianTable": {
+    "name": "Nom",
+    "breed": "Espècie",
+    "age": "Edat (anys)",
+    "image": "Fotografia"
+  }
+}

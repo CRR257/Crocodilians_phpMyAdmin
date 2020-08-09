@@ -1,0 +1,18 @@
+{
+  "header": {
+    "title": "Crocodilians Reserve",
+    "language": "Idioma",
+    "home": "Home",
+    "cocodrilians": "Cocodrilians"
+  },
+  "footer": {
+    "title": "by Crr257"
+  },
+  "crocodilianTable": {
+    "name": "Name",
+    "breed": "Breed",
+    "age": "Age (years)",
+    "image": "Image"
+  }
+}
+
