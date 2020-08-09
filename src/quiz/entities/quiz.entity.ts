@@ -12,6 +12,9 @@ export class Quiz {
     public question: string;
 
     @Column()
+    public answers: string;
+
+    @Column()
     public correctAnswer: string;
 
     @Column()

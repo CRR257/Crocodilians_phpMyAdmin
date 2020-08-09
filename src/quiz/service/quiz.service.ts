@@ -18,10 +18,11 @@ export class QuizService {
   public async createQuiz(quizNew: QuizDTO): Promise<Quiz> {
     const newQuiz = new Quiz();
     newQuiz.numberQuestion= quizNew.numberQuestion;
-    newQuiz.question= quizNew.question;
-    newQuiz.correctAnswer= quizNew.correctAnswer;
-    newQuiz.answerExplanation= quizNew.answerExplanation;
-    
+    newQuiz.question = quizNew.question;
+    newQuiz.answers = quizNew.answers;
+    newQuiz.correctAnswer = quizNew.correctAnswer;
+    newQuiz.answerExplanation = quizNew.answerExplanation;
+
     return this.quizRepository.save(newQuiz);
   }
 }
