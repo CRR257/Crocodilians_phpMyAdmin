@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Exclude } from 'class-transformer';
 
 @Entity()
 export class Quiz {
@@ -12,6 +13,7 @@ export class Quiz {
     public question: string;
 
     @Column()
+    @Exclude()
     public answers: string;
 
     @Column()

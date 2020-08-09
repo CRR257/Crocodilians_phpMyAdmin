@@ -1,4 +1,4 @@
-import { Controller, Get, Res, HttpStatus, Post, Body } from '@nestjs/common';
+import { Controller, Get, Res, HttpStatus, Post, Body, UseInterceptors, ClassSerializerInterceptor } from '@nestjs/common';
 import { QuizService } from '../service/quiz.service';
 import { QuizDTO } from '../dto/quiz-dto';
 
@@ -21,6 +21,7 @@ export class QuizController {
     }
 
     @Get()
+    @UseInterceptors(ClassSerializerInterceptor)
     getAll( @Res() response ) {
         this.quizService
             .getAll()

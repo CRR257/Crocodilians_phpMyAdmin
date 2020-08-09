@@ -10,7 +10,9 @@ export class QuizService {
     @InjectRepository(Quiz)
     private readonly quizRepository: Repository<Quiz>
   ) {}
-
+  // public async getAll(): Promise<Crocodilian[]> {
+  //   return await this.crocodilianRepository.find();
+  // }
   public async getAll(): Promise<Quiz[]> {
     return await this.quizRepository.find();
   }
