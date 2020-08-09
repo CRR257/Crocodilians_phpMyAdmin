@@ -12,7 +12,7 @@ export class Quiz {
     public question: string;
 
     @Column()
-    public answers: string;
+    public answers: string[];
 
     @Column()
     public correctAnswer: string;

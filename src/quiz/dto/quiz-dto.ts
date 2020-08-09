@@ -1,7 +1,7 @@
 export class QuizDTO {
     numberQuestion: number;
     question: string;
-    answers: string;
+    answers: string[];
     correctAnswer: string;
     answerExplanation: string;
 }
