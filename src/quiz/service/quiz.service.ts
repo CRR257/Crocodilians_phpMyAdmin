@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Quiz } from '../entities/quiz.entity';
 import { QuizDTO } from '../dto/quiz-dto';
+import { QuizWithoutAnswers } from '../entities/quizWithoutAnswers.entity';
 
 @Injectable()
 export class QuizService {
@@ -15,6 +16,21 @@ export class QuizService {
   // }
   public async getAll(): Promise<Quiz[]> {
     return await this.quizRepository.find();
+  }
+
+  public async getQuizes(): Promise<any> {
+    const allQuizes =  await this.quizRepository.find();
+    allQuizes.forEach(function(v){ delete v.correctAnswer });
+    // for (let i= 0; i<allQuizes.length; i++) {
+    //   delete allQuizes.correctAnswer;
+    // }
+    // for (let key in allQuizes) {
+    //   delete allQuizes[key].correctAnswer;
+    // }
+    return allQuizes;
+    // const quizesWithoutAnswers = new QuizWithoutAnswers();
+    // quizesWithoutAnswers.numberQuestion;
+    // return quizesWithoutAnswers;
   }
 
   public async createQuiz(quizNew: QuizDTO): Promise<Quiz> {
