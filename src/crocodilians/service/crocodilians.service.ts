@@ -25,7 +25,6 @@ export class CrocodilianService {
     newCrocodilian.breed = crocodilianNew.breed;
     newCrocodilian.age = crocodilianNew.age;
     newCrocodilian.image = crocodilianNew.image;
-
     return this.crocodilianRepository.save(newCrocodilian);
   }
 

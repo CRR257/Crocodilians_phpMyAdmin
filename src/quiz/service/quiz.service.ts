@@ -1,51 +1,29 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Quiz } from '../entities/quiz.entity';
+import { QuizQuestion } from '../entities/quizQuestion.entity';
 import { QuizDTO } from '../dto/quiz-dto';
-import { QuizWithoutAnswers } from '../entities/quizWithoutAnswers.entity';
 
 @Injectable()
 export class QuizService {
   constructor(
-    @InjectRepository(Quiz)
-    private readonly quizRepository: Repository<Quiz>
+    @InjectRepository(QuizQuestion)
+    private readonly quizRepository: Repository<QuizQuestion>
   ) {}
-  // public async getAll(): Promise<Crocodilian[]> {
-  //   return await this.crocodilianRepository.find();
-  // }
-  public async getAll(): Promise<Quiz[]> {
+
+  public async getAll(): Promise<QuizQuestion[]> {
     return await this.quizRepository.find();
   }
 
-  // public getQuizes(): Promise<any> {
-  //   return new Promise(resolve => {
-  //     const allQuizes =  this.quizRepository.find();
-  //     return allQuizes
-  //   })
-    // return await this.quizRepository.find();
-    // const allQuizes =  await this.quizRepository.find();
-    // const response = allQuizes.forEach(function(v){ delete v.correctAnswer });
-    // for (let i= 0; i<allQuizes.length; i++) {
-    //   delete allQuizes.correctAnswer;
-    // }
-    // for (let key in allQuizes) {
-    //   delete allQuizes[key].correctAnswer;
-    // }
-    // return response;
-    // const quizesWithoutAnswers = new QuizWithoutAnswers();
-    // quizesWithoutAnswers.numberQuestion;
-    // return quizesWithoutAnswers;
-  // }
-
-  public async createQuiz(quizNew: QuizDTO): Promise<Quiz> {
-    const newQuiz = new Quiz();
+  public async createQuiz(quizNew: QuizDTO): Promise<QuizQuestion> {
+    const newQuiz = new QuizQuestion();
     newQuiz.numberQuestion= quizNew.numberQuestion;
     newQuiz.question = quizNew.question;
-    newQuiz.answers = quizNew.answers;
-    newQuiz.correctAnswer = quizNew.correctAnswer;
-    newQuiz.answerExplanation = quizNew.answerExplanation;
-
+    newQuiz.answer1 = quizNew.answer1;
+    newQuiz.answer2 = quizNew.answer2;
+    newQuiz.answer3 = quizNew.answer3;
+    newQuiz.answer4 = quizNew.answer4;
+  
     return this.quizRepository.save(newQuiz);
   }
 }

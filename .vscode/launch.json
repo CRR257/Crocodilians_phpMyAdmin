@@ -10,7 +10,7 @@
         "request": "launch",
         "name": "Debug Nest Framework",
         "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
-        "args": ["${workspaceFolder}/src/quiz/service/quiz.service.ts"],
+        "args": ["${workspaceFolder}/src/crocodilians/service/crocodilians.service.ts"],
         "autoAttachChildProcesses": true
       }
     ]

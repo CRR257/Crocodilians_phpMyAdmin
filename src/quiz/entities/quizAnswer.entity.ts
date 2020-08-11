@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
-export class Quiz {
+export class QuizAnswer {
     @PrimaryGeneratedColumn()
     public id: number
 
@@ -9,13 +9,7 @@ export class Quiz {
     public numberQuestion: number;
 
     @Column()
-    public question: string;
-
-    @Column()
-    public answers: string;
-
-    @Column()
-    public correctAnswer: string;
+    public numberAnswer: string;
 
     @Column()
     public answerExplanation: string;

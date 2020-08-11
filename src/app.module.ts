@@ -10,7 +10,7 @@ import { join } from 'path';
 import { ImageController } from './images/controller/images.controller';
 import { ImageService } from './images/service/image.service';
 import { Image } from './images/entities/image.entity';
-import { Quiz } from './quiz/entities/quiz.entity';
+import { QuizQuestion } from './quiz/entities/quizQuestion.entity';
 import { QuizController } from './quiz/controller/quiz.controller';
 import { QuizService } from './quiz/service/quiz.service';
 
@@ -29,7 +29,7 @@ import { QuizService } from './quiz/service/quiz.service';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'front/dist/crocodiliansApp'),
     }),
-    TypeOrmModule.forFeature([Crocodilian, Image, Quiz])
+    TypeOrmModule.forFeature([Crocodilian, Image, QuizQuestion])
   ],
   controllers: [AppController, CrocodilianController, ImageController, QuizController],
   providers: [AppService, CrocodilianService, ImageService, QuizService],

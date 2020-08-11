@@ -33,16 +33,4 @@ export class QuizController {
           .json({ message: 'error in get all quizes' });
       });
   }
-
-  // @Get()
-  // getQuizes(@Res() response) {
-  //     this.quizService.getQuizes().then(quiz => {
-  //       response.status(HttpStatus.OK).json(quiz);
-  //     })
-  //     .catch(() => {
-  //       response
-  //         .status(HttpStatus.FORBIDDEN)
-  //         .json({ message: 'error in get all quizes' });
-  //     });
-  // }
 }
