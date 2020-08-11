@@ -1,0 +1,20 @@
+{
+  "crocodilianTable": {
+    "age": "Edat (anys)",
+    "breed": "Espècie",
+    "image": "Fotografia",
+    "name": "Nom",
+    "error": "Ho sentim, s'ha produït un error",
+    "title": "Llista de Crocodilians de la nostre reserva"
+  },
+  "footer": {
+    "title": "per Crr257"
+  },
+  "header": {
+    "crocodilians": "Cocodrils",
+    "home": "Portada",
+    "language": "Language",
+    "title": "Reserva de Cocodrils",
+    "quiz": "Questionari"
+  }
+}
