@@ -18,20 +18,25 @@ export class QuizService {
     return await this.quizRepository.find();
   }
 
-  public async getQuizes(): Promise<any> {
-    const allQuizes =  await this.quizRepository.find();
-    allQuizes.forEach(function(v){ delete v.correctAnswer });
+  // public getQuizes(): Promise<any> {
+  //   return new Promise(resolve => {
+  //     const allQuizes =  this.quizRepository.find();
+  //     return allQuizes
+  //   })
+    // return await this.quizRepository.find();
+    // const allQuizes =  await this.quizRepository.find();
+    // const response = allQuizes.forEach(function(v){ delete v.correctAnswer });
     // for (let i= 0; i<allQuizes.length; i++) {
     //   delete allQuizes.correctAnswer;
     // }
     // for (let key in allQuizes) {
     //   delete allQuizes[key].correctAnswer;
     // }
-    return allQuizes;
+    // return response;
     // const quizesWithoutAnswers = new QuizWithoutAnswers();
     // quizesWithoutAnswers.numberQuestion;
     // return quizesWithoutAnswers;
-  }
+  // }
 
   public async createQuiz(quizNew: QuizDTO): Promise<Quiz> {
     const newQuiz = new Quiz();
