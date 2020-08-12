@@ -13,6 +13,9 @@ import { Image } from './images/entities/image.entity';
 import { QuizQuestion } from './quiz/entities/quizQuestion.entity';
 import { QuizController } from './quiz/controller/quiz.controller';
 import { QuizService } from './quiz/service/quiz.service';
+import { QuizAnswerService } from './quiz/service/quizAnswer.service';
+import { QuizAnswerController } from './quiz/controller/quizAnswer.controller';
+import { QuizAnswer } from './quiz/entities/quizAnswer.entity';
 
 @Module({
   imports: [
@@ -29,9 +32,9 @@ import { QuizService } from './quiz/service/quiz.service';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'front/dist/crocodiliansApp'),
     }),
-    TypeOrmModule.forFeature([Crocodilian, Image, QuizQuestion])
+    TypeOrmModule.forFeature([Crocodilian, Image, QuizQuestion, QuizAnswer])
   ],
-  controllers: [AppController, CrocodilianController, ImageController, QuizController],
-  providers: [AppService, CrocodilianService, ImageService, QuizService],
+  controllers: [AppController, CrocodilianController, ImageController, QuizController, QuizAnswerController],
+  providers: [AppService, CrocodilianService, ImageService, QuizService, QuizAnswerService],
 })
 export class AppModule {}
