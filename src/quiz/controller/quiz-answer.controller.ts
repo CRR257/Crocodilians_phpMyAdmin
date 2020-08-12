@@ -1,6 +1,6 @@
 import { Controller, Get, Res, HttpStatus, Post, Body, Param, Delete } from '@nestjs/common';
-import { QuizAnswerDTO } from '../dto/quizAnswer-dto';
-import { QuizAnswerService } from '../service/quizAnswer.service';
+import { QuizAnswerDTO } from '../dto/quiz-answer-dto';
+import { QuizAnswerService } from '../service/quiz-answer.service';
 
 @Controller('api/quizresults')
 export class QuizAnswerController {

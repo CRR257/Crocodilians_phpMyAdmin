@@ -1,5 +1,5 @@
 export class QuizAnswerDTO {
     numberQuestion: number;
-    numberAnswer: string;
+    correctAnswer: string;
     answerExplanation: string;
 }

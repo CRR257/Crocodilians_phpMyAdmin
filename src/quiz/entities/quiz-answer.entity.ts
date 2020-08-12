@@ -9,7 +9,7 @@ export class QuizAnswer {
     public numberQuestion: number;
 
     @Column()
-    public numberAnswer: string;
+    public correctAnswer: string;
 
     @Column()
     public answerExplanation: string;

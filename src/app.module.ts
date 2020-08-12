@@ -10,12 +10,12 @@ import { join } from 'path';
 import { ImageController } from './images/controller/images.controller';
 import { ImageService } from './images/service/image.service';
 import { Image } from './images/entities/image.entity';
-import { QuizQuestion } from './quiz/entities/quizQuestion.entity';
+import { QuizQuestion } from './quiz/entities/quiz-question.entity';
 import { QuizController } from './quiz/controller/quiz.controller';
 import { QuizService } from './quiz/service/quiz.service';
-import { QuizAnswerService } from './quiz/service/quizAnswer.service';
-import { QuizAnswerController } from './quiz/controller/quizAnswer.controller';
-import { QuizAnswer } from './quiz/entities/quizAnswer.entity';
+import { QuizAnswerService } from './quiz/service/quiz-answer.service';
+import { QuizAnswerController } from './quiz/controller/quiz-answer.controller';
+import { QuizAnswer } from './quiz/entities/quiz-answer.entity';
 
 @Module({
   imports: [
