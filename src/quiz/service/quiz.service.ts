@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Put, Delete, Body, Res, Param } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { QuizQuestion } from '../entities/quizQuestion.entity';
@@ -25,5 +25,9 @@ export class QuizService {
     newQuiz.answer4 = quizNew.answer4;
   
     return this.quizRepository.save(newQuiz);
+  }
+
+  public async deleteQuiz(idQuiz: number): Promise<any> {
+    return await this.quizRepository.delete(idQuiz);
   }
 }

@@ -28,4 +28,8 @@ export class QuizAnswerService {
   public async getAnswerQuestion(numberQuestion: number): Promise<QuizAnswer> {
     return await this.quizAnswerRepository.findOne(numberQuestion);
   }
+
+  public async deleteAnswerQuestion(idQuiz: number): Promise<any> {
+    return await this.quizAnswerRepository.delete(idQuiz);
+  }
 }

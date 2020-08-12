@@ -1,4 +1,4 @@
-import { Controller, Get, Res, HttpStatus, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Res, HttpStatus, Post, Body, Param, Delete } from '@nestjs/common';
 import { QuizAnswerDTO } from '../dto/quizAnswer-dto';
 import { QuizAnswerService } from '../service/quizAnswer.service';
 
@@ -40,5 +40,14 @@ export class QuizAnswerController {
       } ).catch( () => {
           response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: answer not found' } );
       } )
+  }
+
+  @Delete( ':id' )
+  delete( @Res() response, @Param( 'id' ) idQuiz ) {
+      this.quizAnswerService.deleteAnswerQuestion( idQuiz ).then( res => {
+          response.status( HttpStatus.OK ).json( res );
+      } ).catch( () => {
+          response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: quiz is not deleted' } );
+      } );
   }
 }

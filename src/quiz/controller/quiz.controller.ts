@@ -1,6 +1,7 @@
-import { Controller, Get, Res, HttpStatus, Post, Body } from '@nestjs/common';
+import { Controller, Get, Res, HttpStatus, Post, Body, Delete, Param } from '@nestjs/common';
 import { QuizService } from '../service/quiz.service';
 import { QuizDTO } from '../dto/quiz-dto';
+
 
 @Controller('api/quiz')
 export class QuizController {
@@ -33,4 +34,13 @@ export class QuizController {
           .json({ message: 'error in get all quizes' });
       });
   }
+
+  @Delete( ':id' )
+    delete( @Res() response, @Param( 'id' ) idQuiz ) {
+        this.quizService.deleteQuiz( idQuiz ).then( res => {
+            response.status( HttpStatus.OK ).json( res );
+        } ).catch( () => {
+            response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: quiz is not deleted' } );
+        } );
+    }
 }
