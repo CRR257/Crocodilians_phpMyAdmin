@@ -3,7 +3,7 @@ import { QuizService } from '../service/quiz.service';
 import { QuizDTO } from '../dto/quiz-dto';
 
 
-@Controller('api/quiz')
+@Controller('api/quizz')
 export class QuizController {
   constructor(private quizService: QuizService) {}
 

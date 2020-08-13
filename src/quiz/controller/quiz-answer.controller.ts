@@ -2,7 +2,7 @@ import { Controller, Get, Res, HttpStatus, Post, Body, Param, Delete } from '@ne
 import { QuizAnswerDTO } from '../dto/quiz-answer-dto';
 import { QuizAnswerService } from '../service/quiz-answer.service';
 
-@Controller('api/quizresults')
+@Controller('api/quizzresults')
 export class QuizAnswerController {
   constructor(private quizAnswerService: QuizAnswerService) {}
 
