@@ -1,4 +1,4 @@
-import { Controller, Get, Res, HttpStatus, Post, Body, Delete, Param } from '@nestjs/common';
+import { Controller, Get, Res, HttpStatus, Post, Body, Delete, Param, Put } from '@nestjs/common';
 import { QuizService } from '../service/quiz.service';
 import { QuizDTO } from '../dto/quiz-dto';
 
@@ -35,6 +35,24 @@ export class QuizController {
       });
   }
 
+  @Get( ':id' )
+  getQuestion( @Param( 'id' ) idQuestion, @Res() response ) {
+      this.quizService.getQuestion( idQuestion ).then( answer => {
+          response.status( HttpStatus.OK ).json( answer )
+      } ).catch( () => {
+          response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: answer not found' } );
+      } )
+  }
+
+  @Put( ':id' )
+  update( @Body() updateQuizDto: QuizDTO, @Res() response, @Param( 'id' ) idQuiz ) {
+      this.quizService.updateQuiz( idQuiz, updateQuizDto ).then( quizUpdated => {
+          response.status( HttpStatus.OK ).json( quizUpdated );
+      } ).catch( () => {
+          response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: quiz is not updated' } );
+      } );
+  }
+  
   @Delete( ':id' )
     delete( @Res() response, @Param( 'id' ) idQuiz ) {
         this.quizService.deleteQuiz( idQuiz ).then( res => {

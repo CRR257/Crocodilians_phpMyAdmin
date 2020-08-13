@@ -15,6 +15,10 @@ export class QuizAnswerService {
     return await this.quizAnswerRepository.find();
   }
 
+  public async getAnswerQuestion(numberQuestion: number): Promise<QuizAnswer> {
+    return await this.quizAnswerRepository.findOne(numberQuestion);
+  }
+
   public async createQuizAnswer(quizAnswerNew: QuizAnswerDTO): Promise<QuizAnswer> {
     const newAnswerQuiz = new QuizAnswer();
     newAnswerQuiz.numberQuestion= quizAnswerNew.numberQuestion;
@@ -24,11 +28,7 @@ export class QuizAnswerService {
     return this.quizAnswerRepository.save(newAnswerQuiz);
   }
 
-  public async getAnswerQuestion(numberQuestion: number): Promise<QuizAnswer> {
-    return await this.quizAnswerRepository.findOne(numberQuestion);
-  }
-
-  public async updateQuiz(idAnswerQuiz: number, quizAnswerUpdate: QuizAnswerDTO): Promise<QuizAnswer> {
+  public async updateAnswerQuestion(idAnswerQuiz: number, quizAnswerUpdate: QuizAnswerDTO): Promise<QuizAnswer> {
     const quizAnswerToUpdate = await this.quizAnswerRepository.findOne(idAnswerQuiz);
     quizAnswerToUpdate.numberQuestion = quizAnswerUpdate.numberQuestion;
     quizAnswerToUpdate.numberQuestion = quizAnswerUpdate.numberQuestion;

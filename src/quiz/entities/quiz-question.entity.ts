@@ -9,6 +9,9 @@ export class QuizQuestion {
     public numberQuestion: number;
 
     @Column()
+    public image: string;
+
+    @Column()
     public question: string;
 
     @Column()

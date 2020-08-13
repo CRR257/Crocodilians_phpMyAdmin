@@ -1,4 +1,4 @@
-import { Controller, Get, Res, HttpStatus, Post, Body, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Res, HttpStatus, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { QuizAnswerDTO } from '../dto/quiz-answer-dto';
 import { QuizAnswerService } from '../service/quiz-answer.service';
 
@@ -38,8 +38,17 @@ export class QuizAnswerController {
       this.quizAnswerService.getAnswerQuestion( idQuestion ).then( answer => {
           response.status( HttpStatus.OK ).json( answer )
       } ).catch( () => {
-          response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: answer not found' } );
+          response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: quiz answer not found' } );
       } )
+  }
+
+  @Put( ':id' )
+  update( @Body() updateQuizAnswerDto: QuizAnswerDTO, @Res() response, @Param( 'id' ) idQuestion ) {
+      this.quizAnswerService.updateAnswerQuestion( idQuestion, updateQuizAnswerDto ).then( quizAnswerUpdated => {
+          response.status( HttpStatus.OK ).json( quizAnswerUpdated );
+      } ).catch( () => {
+          response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: quiz answer is not updated' } );
+      } );
   }
 
   @Delete( ':id' )
@@ -47,7 +56,7 @@ export class QuizAnswerController {
       this.quizAnswerService.deleteAnswerQuestion( idQuiz ).then( res => {
           response.status( HttpStatus.OK ).json( res );
       } ).catch( () => {
-          response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: quiz is not deleted' } );
+          response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: quiz answer is not deleted' } );
       } );
   }
 }
