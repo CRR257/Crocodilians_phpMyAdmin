@@ -20,6 +20,11 @@
     "title": "Reserva de Cocodrils",
     "video": "Vídeos"
   },
+  "quiz": {
+    "correct": "Resposta correcte!",
+    "title": "Questionari de crocodilians",
+    "wrong": "Resposta incorrecte"
+  },
   "video": {
     "title": "Vídeos divertits!"
   }

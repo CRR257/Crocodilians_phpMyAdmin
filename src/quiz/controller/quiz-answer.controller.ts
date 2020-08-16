@@ -33,9 +33,9 @@ export class QuizAnswerController {
       });
   }
 
-  @Get( ':numberQuestion' )
-  getAnswerQuestion( @Param( 'numberQuestion' ) numberQuestion, @Res() response ) {
-      this.quizAnswerService.getAnswerQuestion( numberQuestion ).then( answer => {
+  @Get( ':id' )
+  getAnswerQuestion( @Param( 'id' ) idQuestion, @Res() response ) {
+      this.quizAnswerService.getAnswerQuestion( idQuestion ).then( answer => {
           response.status( HttpStatus.OK ).json( answer )
       } ).catch( () => {
           response.status( HttpStatus.FORBIDDEN ).json( { message: 'error: quiz answer not found' } );

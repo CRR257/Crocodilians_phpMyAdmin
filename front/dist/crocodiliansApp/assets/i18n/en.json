@@ -13,12 +13,17 @@
     "title": "by Crr257"
   },
   "header": {
-    "crocodilians": "Crocodrilians",
+    "crocodilians": "Crocodilians",
     "home": "Home",
     "language": "Idioma",
     "quiz": "Quiz",
     "title": "Crocodilians Reserve",
     "video": "Videos"
+  },
+  "quiz": {
+    "correct": "Correct Answer!",
+    "title": "Crocodilian's Quizz",
+    "wrong": "Wrong Answer"
   },
   "video": {
     "title": "Fun videos!"
