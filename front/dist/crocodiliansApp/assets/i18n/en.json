@@ -22,6 +22,7 @@
   },
   "quiz": {
     "correct": "Correct Answer!",
+    "testknowlege": "Test your knowledge about crocodilians!",
     "title": "Crocodilian's Quizz",
     "wrong": "Wrong Answer"
   },

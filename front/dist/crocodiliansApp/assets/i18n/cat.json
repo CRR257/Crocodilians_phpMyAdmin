@@ -22,6 +22,7 @@
   },
   "quiz": {
     "correct": "Resposta correcte!",
+    "testknowlege": "Posa a prova els teus coneixements sobre els crocodilians!",
     "title": "Questionari de crocodilians",
     "wrong": "Resposta incorrecte"
   },
