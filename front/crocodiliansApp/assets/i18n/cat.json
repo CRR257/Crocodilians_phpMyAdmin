@@ -18,7 +18,8 @@
     "language": "Language",
     "quiz": "Questionari",
     "title": "Reserva de Cocodrils",
-    "video": "Vídeos"
+    "video": "Vídeos",
+    "game": "Joc"
   },
   "quiz": {
     "correct": "Resposta correcte!",
@@ -28,5 +29,8 @@
   },
   "video": {
     "title": "Vídeos divertits!"
+  },
+  "game": {
+    "title": "Pedra, paper, tisores, sargantana, spock"
   }
 }

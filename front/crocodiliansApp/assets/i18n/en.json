@@ -18,7 +18,8 @@
     "language": "Idioma",
     "quiz": "Quiz",
     "title": "Crocodilians Reserve",
-    "video": "Videos"
+    "video": "Videos",
+    "game": "Game"
   },
   "quiz": {
     "correct": "Correct Answer!",
@@ -28,5 +29,9 @@
   },
   "video": {
     "title": "Fun videos!"
+  },
+  "game": {
+    "title": "Rock, paper, scissors, lizard, spock",
+    "instructions": "In case ofyou don'tknow how t play to Rock, paper, scissors, lizard, spock, in this video you can see the instructions explained by Sheldon Cooper"
   }
 }

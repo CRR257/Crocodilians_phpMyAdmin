@@ -37,4 +37,5 @@ import { QuizAnswer } from './quiz/entities/quiz-answer.entity';
   controllers: [AppController, CrocodilianController, ImageController, QuizController, QuizAnswerController],
   providers: [AppService, CrocodilianService, ImageService, QuizService, QuizAnswerService],
 })
+
 export class AppModule {}
